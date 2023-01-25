@@ -5,6 +5,10 @@ import Link from "next/link";
 import { databaseId } from "./index.js";
 import styles from "./post.module.css";
 
+function calculateFirstTenCharacters(text) {
+  return text.substring(0, 10);
+}
+
 export const Text = ({ text }) => {
   if (!text) {
     return null;
@@ -23,6 +27,7 @@ export const Text = ({ text }) => {
           strikethrough ? styles.strikethrough : "",
           underline ? styles.underline : "",
         ].join(" ")}
+        key={calculateFirstTenCharacters(text.content)}
         style={color !== "default" ? { color } : {}}
       >
         {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
@@ -77,7 +82,7 @@ const renderBlock = (block) => {
     case "numbered_list_item":
       return (
         <li>
-          <Text text={value.rich_text} />
+          <Text text={value.rich_text} key={id} />
           {!!value.children && renderNestedList(block)}
         </li>
       );

@@ -15,6 +15,7 @@ export default function Home({ posts }) {
       </Head>
 
       <main className={styles.container}>
+        <h1 className={"text-sm"}>Test titile</h1>
         <header className={styles.header}>
           <div className={styles.logos}>
             <svg

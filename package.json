@@ -15,6 +15,11 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "node-fetch": "^3.3.0"
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.13",
+    "node-fetch": "^3.3.0",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4"
   }
 }

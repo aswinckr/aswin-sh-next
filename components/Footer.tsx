@@ -14,10 +14,18 @@ const Footer = () => {
           Twitter
         </a>
         <a
-          href="https://linkedin.com/in/aswinckr" target={"_blank"}
-          className="pl-4 pr-4 text-gray-500 hover:text-primary transition-colors ease-in"
+          href="https://linkedin.com/in/aswinckr"
+          target={"_blank"}
+          className="pl-4 text-gray-500 hover:text-primary transition-colors ease-in"
         >
           Linkedin
+        </a>
+        <a
+          href="https://github.com/aswinckr"
+          target={"_blank"}
+          className="pl-4 pr-4 text-gray-500 hover:text-primary transition-colors ease-in"
+        >
+          Github
         </a>
         <a
           href="# "

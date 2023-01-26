@@ -73,7 +73,7 @@ const Nav = () => {
                 isOpen ? `inline-block` : `hidden`
               } lg:inline-block text-sm px-4 py-2 text-gray-500 leading-none border rounded border-gray-800 dark:border-gray-800mt-4 lg:mt-0`}
             >
-              Login
+              Join my mailing list
             </a>
           </div>
         </div>

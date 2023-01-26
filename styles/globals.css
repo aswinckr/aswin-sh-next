@@ -7,6 +7,7 @@
   h1 {
     @apply font-inter;
     @apply font-bold;
+    @apply text-3xl;
   }
   h2 {
     @apply font-inter;
@@ -16,15 +17,12 @@
     @apply font-inter;
     @apply font-bold;
   }
-  ,
   a {
     @apply text-primary;
   }
-  ,
   p {
     @apply text-lg;
   }
-  ,
   p,
   ul,
   li {

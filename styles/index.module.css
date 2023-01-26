@@ -15,8 +15,8 @@
 }
 
 .header p {
-  opacity: 0.7;
-  line-height: 1.5;
+  /* opacity: 0.7; */
+  /* line-height: 1.5; */
 }
 
 .plus {
@@ -56,7 +56,7 @@
 }
 
 .postTitle a {
-  color: inherit;
+  @apply text-white;
 }
 
 .postDescription {

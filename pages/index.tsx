@@ -3,7 +3,9 @@ import Link from "next/link";
 import { getDatabase } from "../lib/notion";
 import { Text } from "./[id]";
 import IntroShort from "../components/IntroShort";
+import Recommended from "../components/Recommended";
 import styles from "../styles/index.module.css";
+// import { PageObjectResponse, PartialPageObjectResponse, BlockObjectResponse, PartialBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -19,6 +21,14 @@ export default function Home({ posts }) {
         <header className={styles.header}>
           <IntroShort />
         </header>
+
+        <Recommended
+          pinnedScribbles={[
+            { title: "Title 1", url: "url 1", topic: "design" },
+            { title: "Title 2", url: "url 2", topic: "design" },
+            { title: "Title 3", url: "url 3", topic: "design" },
+          ]}
+        />
 
         <h2 className={styles.heading}>All Posts</h2>
         <ol className={styles.posts}>

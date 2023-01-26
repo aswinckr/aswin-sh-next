@@ -11,7 +11,7 @@
 }
 
 .header {
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 .header p {
@@ -25,13 +25,8 @@
 }
 
 .heading {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #dedede;
-  text-transform: uppercase;
-  font-size: 15px;
   opacity: 0.6;
-  letter-spacing: 0.5px;
+  @apply text-lg font-medium tracking-wide mb-0 pb-8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,7 +42,7 @@
 }
 
 .post {
-  margin-bottom: 50px;
+  @apply mb-8;
 }
 
 .postTitle {

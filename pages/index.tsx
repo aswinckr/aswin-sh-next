@@ -3,9 +3,9 @@ import Link from "next/link";
 import { getDatabase } from "../lib/notion";
 import { Text } from "./[id]";
 import IntroShort from "../components/IntroShort";
-import Recommended from "../components/Recommended";
+import Button from "../components/Button";
+import Posts from "../components/Posts";
 import styles from "../styles/index.module.css";
-// import { PageObjectResponse, PartialPageObjectResponse, BlockObjectResponse, PartialBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -13,7 +13,7 @@ export default function Home({ posts }) {
   return (
     <div>
       <Head>
-        <title>Notion Next.js blog</title>
+        <title>Aswin's blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -22,39 +22,22 @@ export default function Home({ posts }) {
           <IntroShort />
         </header>
 
-        <Recommended
-          pinnedScribbles={[
-            { title: "Title 1", url: "url 1", topic: "design" },
-            { title: "Title 2", url: "url 2", topic: "design" },
-            { title: "Title 3", url: "url 3", topic: "design" },
-          ]}
-        />
+        <div className="mb-16 mt-16">
+          <h2 className={styles.heading}>
+            First time here? You might like these 👇🏽
+          </h2>
+          <Posts postsWithLimit={{ posts, limit: 3 }} />
+        </div>
 
-        <h2 className={styles.heading}>All Posts</h2>
-        <ol className={styles.posts}>
-          {posts.map((post) => {
-            const date = new Date(post.last_edited_time).toLocaleString(
-              "en-US",
-              {
-                month: "short",
-                day: "2-digit",
-                year: "numeric",
-              }
-            );
-            return (
-              <li key={post.id} className={styles.post}>
-                <h3 className={styles.postTitle}>
-                  <Link href={`/${post.id}`}>
-                    <Text text={post.properties.Name.title} />
-                  </Link>
-                </h3>
-
-                <p className={styles.postDescription}>{date}</p>
-                <Link href={`/${post.id}`}>Read post →</Link>
-              </li>
-            );
-          })}
-        </ol>
+        <div className="mb-16">
+          <h2 className={styles.heading}>Latest Writing</h2>
+          <Posts postsWithLimit={{ posts, limit: 3 }} />
+          <Button
+            buttonText={`See All ${posts.length} Essays`}
+            url="/writing"
+            buttonType="secondary"
+          />
+        </div>
       </main>
     </div>
   );

@@ -4,6 +4,10 @@ import { getDatabase, getPage, getBlocks } from "../lib/notion";
 import Link from "next/link";
 import { databaseId } from "./index.js";
 import styles from "./post.module.css";
+import {
+  BlockObjectResponse,
+  PartialBlockObjectResponse,
+} from "@notionhq/client/build/src/api-endpoints";
 
 function calculateFirstTenCharacters(text) {
   return text.substring(0, 10);
@@ -206,7 +210,7 @@ export const getStaticProps = async (context) => {
   // https://developers.notion.com/docs/working-with-page-content#reading-nested-blocks
   const childBlocks = await Promise.all(
     blocks
-      .filter((block) => block.has_children)
+      .filter((block: BlockObjectResponse) => block.has_children)
       .map(async (block) => {
         return {
           id: block.id,
@@ -214,7 +218,7 @@ export const getStaticProps = async (context) => {
         };
       })
   );
-  const blocksWithChildren = blocks.map((block) => {
+  const blocksWithChildren = blocks.map((block: BlockObjectResponse) => {
     // Add child blocks if the block should contain children but none exists
     if (block.has_children && !block[block.type].children) {
       block[block.type]["children"] = childBlocks.find(

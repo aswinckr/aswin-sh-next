@@ -1,7 +1,7 @@
 .container {
   padding: 0 20px;
-  max-width: 700px;
-  margin: 0 auto;
+  @apply max-w-screen-md;
+  @apply mx-auto;
 }
 
 .logos {
@@ -57,6 +57,7 @@
 
 .postTitle a {
   @apply text-white;
+  @apply hover:text-primary transition-colors ease-in;
 }
 
 .postDescription {

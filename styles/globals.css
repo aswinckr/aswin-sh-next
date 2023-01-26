@@ -20,6 +20,10 @@
   a {
     @apply text-primary;
   }
+  nav a {
+    @apply text-gray-500 hover:text-primary transition-colors ease-in;
+    @apply font-medium;
+  }
   p {
     @apply text-lg;
   }

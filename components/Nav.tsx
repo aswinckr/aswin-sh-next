@@ -1,8 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import logo from "../public/logo.png";
-import Image from "next/image";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -35,7 +33,7 @@ const Nav = () => {
         <div className="block lg:hidden">
           <button
             onClick={() => toggleOpen()}
-            className="flex items-center px-3 py-2 border rounded border-gray-300 dark:border-gray-800 hover:border-gray-500 text-gray-500 hover:text-primary "
+            className="flex items-center px-3 py-2 border rounded border-gray-300 dark:border-gray-800 hover:border-gray-500 "
           >
             <svg
               className="fill-current h-3 w-3"
@@ -53,7 +51,7 @@ const Nav = () => {
               <span
                 className={`${isOpen ? `block` : `hidden`} ${
                   router.pathname == "/" ? "active" : ""
-                } block mt-4 lg:inline-block lg:mt-0 text-gray-500 hover:text-primary mr-4`}
+                } block mt-4 lg:inline-block lg:mt-0 mr-4`}
               >
                 Start Here
               </span>
@@ -62,27 +60,18 @@ const Nav = () => {
               <span
                 className={`${
                   isOpen ? `block` : `hidden`
-                } block mt-4 lg:inline-block lg:mt-0 text-gray-500 hover:text-primary mr-4`}
+                } block mt-4 lg:inline-block lg:mt-0 mr-4`}
               >
                 Writing
               </span>
             </Link>
-            {/* <Link href="/journey"> */}
-            <span
-              className={`${
-                isOpen ? `block` : `hidden`
-              } block mt-4 lg:inline-block lg:mt-0 text-gray-500 hover:text-primary`}
-            >
-              Journey
-            </span>
-            {/* </Link> */}
           </div>
           <div>
             <a
               href="#"
               className={`${
                 isOpen ? `inline-block` : `hidden`
-              } lg:inline-block text-sm px-4 py-2 text-gray-500 leading-none border rounded border-gray-300 dark:border-gray-800 hover:border-gray-500 hover:text-primary mt-4 lg:mt-0`}
+              } lg:inline-block text-sm px-4 py-2 text-gray-500 leading-none border rounded border-gray-800 dark:border-gray-800mt-4 lg:mt-0`}
             >
               Login
             </a>

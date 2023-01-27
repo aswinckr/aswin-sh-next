@@ -1,12 +1,23 @@
 .container {
   padding: 0 20px;
-  max-width: 700px;
+  @apply max-w-2xl;
   margin: 0 auto;
   line-height: 1.5;
 }
 
 .container h1 {
-  font-size: 32px;
+  @apply text-3xl pt-16 pb-8;
+}
+
+.container h2 {
+  @apply pt-12 pb-2 text-2xl;
+}
+.container blockquote {
+  @apply italic opacity-60 pl-4 border-l-4 mt-2 mb-2;
+}
+
+.container p {
+  @apply pt-4 pb-4 leading-8 opacity-80;
 }
 
 .container img {
@@ -33,7 +44,7 @@
 }
 
 .bold {
-  font-weight: bold;
+  @apply font-bold opacity-100 pt-16 pb-16;
 }
 
 .code {

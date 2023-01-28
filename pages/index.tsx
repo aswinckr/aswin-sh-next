@@ -26,12 +26,12 @@ export default function Home({ posts }) {
           <h2 className={styles.heading}>
             First time here? You might like these 👇🏽
           </h2>
-          <Posts postsWithLimit={{ posts, limit: 3 }} />
+          <Posts postsWithLimit={{ posts, filter: ["blog"], limit: 3 }} />
         </div>
 
         <div className="mb-16">
           <h2 className={styles.heading}>Latest Writing</h2>
-          <Posts postsWithLimit={{ posts, limit: 3 }} />
+          <Posts postsWithLimit={{ posts, filter: ["blog"], limit: 3 }} />
           <Button
             buttonText={`See All ${posts.length} Essays →`}
             url="/writing"

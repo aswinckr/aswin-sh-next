@@ -9,6 +9,7 @@ import {
 interface PostsWithLimit {
   posts: (PageObjectResponse | PartialPageObjectResponse)[];
   limit?: number;
+  filter?: string[];
 }
 
 const displayOnlyFirstNPosts = (posts, limit) => {
@@ -18,19 +19,33 @@ const displayOnlyFirstNPosts = (posts, limit) => {
   return posts;
 };
 
+const filterPostsByTags = (posts, filterTags = []) => {
+  const filteredPosts = posts.filter((post) => {
+    const postTags = post.properties.Tags.multi_select.map((tag) => tag.name);
+    return filterTags.every((tag) => postTags.includes(tag));
+  });
+  return filteredPosts;
+};
+
 export default function Posts({
   postsWithLimit,
 }: {
   postsWithLimit: PostsWithLimit;
-}) {
-  const posts = displayOnlyFirstNPosts(
+}): JSX.Element {
+  const filteredPosts = filterPostsByTags(
     postsWithLimit.posts,
+    postsWithLimit.filter
+  );
+
+  const postsAfterFilteringAndLimits = displayOnlyFirstNPosts(
+    filteredPosts,
     postsWithLimit.limit
   );
+
   return (
     <>
       <ol className={styles.posts}>
-        {posts.map((post) => {
+        {postsAfterFilteringAndLimits.map((post) => {
           const date = new Date(post.last_edited_time).toLocaleString("en-US", {
             month: "short",
             day: "2-digit",

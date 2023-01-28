@@ -4,6 +4,7 @@ import { getDatabase, getPage, getBlocks } from "../lib/notion";
 import Link from "next/link";
 import { databaseId } from "./index";
 import styles from "../styles/post.module.css";
+import Button from "../components/Button";
 import {
   BlockObjectResponse,
   PartialBlockObjectResponse,
@@ -184,9 +185,9 @@ export default function Post({ page, blocks }) {
           {blocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
-          <Link href="/" className={styles.back}>
-            ← Go home
-          </Link>
+          <div className="mt-4">
+            <Button buttonText={`← Go home`} url="/" buttonType="secondary" />
+          </div>
         </section>
       </article>
     </div>

@@ -33,7 +33,7 @@ export default function Home({ posts }) {
           <h2 className={styles.heading}>Latest Writing</h2>
           <Posts postsWithLimit={{ posts, limit: 3 }} />
           <Button
-            buttonText={`See All ${posts.length} Essays`}
+            buttonText={`See All ${posts.length} Essays →`}
             url="/writing"
             buttonType="secondary"
           />

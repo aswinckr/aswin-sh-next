@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { getDatabase } from "../lib/notion";
+import { getDatabase, getDatabaseWithFilter } from "../lib/notion";
 import { Text } from "./[id]";
 import IntroShort from "../components/IntroShort";
 import Button from "../components/Button";
@@ -26,17 +26,7 @@ export default function Home({ posts }) {
           <h2 className={styles.heading}>
             First time here? You might like these 👇🏽
           </h2>
-          <Posts postsWithLimit={{ posts, filter: ["blog"], limit: 3 }} />
-        </div>
-
-        <div className="mb-16">
-          <h2 className={styles.heading}>Latest Writing</h2>
-          <Posts postsWithLimit={{ posts, filter: ["blog"], limit: 3 }} />
-          <Button
-            buttonText={`See All ${posts.length} Essays →`}
-            url="/writing"
-            buttonType="secondary"
-          />
+          <Posts postsWithLimit={{ posts }} />
         </div>
       </main>
     </div>
@@ -44,7 +34,23 @@ export default function Home({ posts }) {
 }
 
 export const getStaticProps = async () => {
-  const database = await getDatabase(databaseId);
+  // const filter = {
+  //   timestamp: "created_time",
+  //   created_time: {
+  //     past_week: {},
+  //   },
+  // };
+
+  const filter = {
+    property: "Tags",
+    multi_select: {
+      contains: "featured",
+    },
+  };
+
+  const database = await getDatabaseWithFilter(databaseId, filter);
+
+  console.log(`-----------------${database}`);
 
   return {
     props: {

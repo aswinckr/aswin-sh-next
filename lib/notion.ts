@@ -11,6 +11,14 @@ export const getDatabase = async (databaseId) => {
   return response.results;
 };
 
+export const getDatabaseWithFilter = async (databaseId, filter) => {
+  const response = await notion.databases.query({
+    database_id: databaseId,
+    filter: filter,
+  });
+  return response.results;
+};
+
 export const getPage = async (pageId) => {
   const response = await notion.pages.retrieve({ page_id: pageId });
   return response;

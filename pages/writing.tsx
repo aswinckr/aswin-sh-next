@@ -23,7 +23,7 @@ export default function Writing({ posts }) {
       </Head>
 
       <main className={styles.container}>
-        <h1 className={styles.pageTitle}>Writing Archive</h1>
+        <h1 className={styles.pageTitle}>🦧 Writing Archive</h1>
         <ButtonTags
           posts={posts}
           setFilteredPosts={setFilteredPosts}

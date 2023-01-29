@@ -21,7 +21,7 @@ export default function Projects({ posts }) {
       </Head>
 
       <main className={styles.container}>
-        <h1 className={styles.pageTitle}>Projects</h1>
+        <h1 className={styles.pageTitle}>🎧 Projects</h1>
         <ButtonTags
           posts={posts}
           setFilteredPosts={setFilteredPosts}

@@ -29,6 +29,10 @@
   @apply text-lg font-medium tracking-wide mb-0 pb-8;
 }
 
+.pageTitle {
+  @apply mb-16 pt-24;
+}
+
 @media (prefers-color-scheme: dark) {
   .heading {
     border-color: #343539;
@@ -65,11 +69,11 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  @apply flex flex-wrap mb-20 cursor-pointer;
+  @apply flex flex-wrap mb-10 cursor-pointer;
 }
 
 .tags div {
-  @apply cursor-pointer inline-block;
+  @apply cursor-pointer inline-block mb-7;
 }
 
 .tags input {

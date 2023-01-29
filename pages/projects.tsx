@@ -17,7 +17,7 @@ export default function Projects({ posts }) {
       </Head>
 
       <main className={styles.container}>
-        <h1 className="mb-24 pt-24">Projects</h1>
+        <h1 className={styles.pageTitle}>Projects</h1>
         <Posts posts={posts} />
       </main>
     </div>

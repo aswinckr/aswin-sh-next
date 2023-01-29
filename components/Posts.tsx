@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Text } from "../pages/[id]";
 import styles from "../styles/index.module.css";
 import Link from "next/link";

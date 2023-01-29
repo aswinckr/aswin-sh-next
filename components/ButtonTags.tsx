@@ -1,45 +1,111 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import styles from "../styles/index.module.css";
+import {
+  getArrayThatContainsString,
+  trimStringFromAllValuesInArray,
+} from "../utils/arrays";
 
-const ButtonTags = () => {
-  const [selected, setSelected] = React.useState("one");
+interface ButtonTagsProps {
+  posts: any;
+  setFilteredPosts: (any) => void;
+  filterKeyword?: string;
+}
+
+const createTagsFromPosts = (posts) => {
+  const tags = posts.reduce((acc, post) => {
+    return [
+      ...acc,
+      ...post.properties.Tags.multi_select.map((tag) => tag.name),
+    ];
+  }, []);
+
+  return tags;
+};
+
+const getUniqueTags = (array) => {
+  return array.reduce((acc, value) => {
+    if (!acc.includes(value)) {
+      return [...acc, value];
+    }
+    return acc;
+  }, []);
+};
+
+const checkIfAtleastOneValueInArrayHasString = (array, string) => {
+  return array.some((item) => item.includes(string));
+};
+
+const filterPostsByTagString = (posts, tagString) => {
+  const filteredPosts = posts.filter((post) => {
+    const postTags = post.properties.Tags.multi_select.map((tag) => tag.name);
+    // console.log(checkIfAtleastOneValueInArrayHasString(postTags, tagString));
+    return checkIfAtleastOneValueInArrayHasString(postTags, tagString);
+  });
+  return filteredPosts;
+};
+
+const ButtonTags = (props: ButtonTagsProps) => {
+  const [selected, setSelected] = React.useState("all");
+
+  const { posts, setFilteredPosts, filterKeyword = "" } = props;
+
+  useEffect(() => {
+    if (selected === "all") {
+      setFilteredPosts(posts);
+    } else {
+      const filteredPosts = filterPostsByTagString(posts, selected);
+      setFilteredPosts(filteredPosts);
+    }
+  }, [selected]);
+
+  // 1. Separate tags from posts
+  // 2. Get unique tags
+  // 3. Get tags that contain the filter keyword
+  // 4. Trim the filter keyword from the tags
+  // 5. Map over the tags and create a button for each one
+
+  const tagsToShow = trimStringFromAllValuesInArray(
+    getArrayThatContainsString(
+      getUniqueTags(createTagsFromPosts(posts)),
+      filterKeyword
+    ),
+    filterKeyword
+  );
 
   return (
     <div className={styles.tags}>
-      <div className={`${selected === "one" ? styles.selected : ""}`}>
+      <div className={`${selected === "all" ? styles.selected : ""}`}>
         <input
           type="radio"
-          id="one"
+          id={"all"}
           name="react-tips"
-          value="one"
-          checked={selected === "one"}
+          value={"all"}
+          checked={selected === "all"}
           onChange={(e) => setSelected(e.target.value)}
         />
-        <label htmlFor="one">One</label>
+        <label htmlFor={"all"}>All</label>
       </div>
-      <div className={`${selected === "two" ? styles.selected : ""}`}>
-        <input
-          type="radio"
-          id="two"
-          name="react-tips"
-          value="two"
-          checked={selected === "two"}
-          onChange={(e) => setSelected(e.target.value)}
-        />
-        <label htmlFor="two">Two</label>
-      </div>
-      <div className={`${selected === "three" ? styles.selected : ""}`}>
-        <input
-          type="radio"
-          id="three"
-          name="react-tips"
-          value="three"
-          checked={selected === "three"}
-          onChange={(e) => setSelected(e.target.value)}
-        />
-        <label htmlFor="three">Three</label>
-      </div>
+      {tagsToShow.map((tag) => {
+        return (
+          <div
+            className={`${selected === tag ? styles.selected : ""}`}
+            key={tag}
+          >
+            <input
+              type="radio"
+              id={tag}
+              name="react-tips"
+              value={tag}
+              checked={selected === tag}
+              onChange={(e) => {
+                setSelected(e.target.value);
+              }}
+            />
+            <label htmlFor={tag}>{tag}</label>
+          </div>
+        );
+      })}
     </div>
   );
 };

@@ -28,7 +28,7 @@ export default function Home({ posts }) {
           </h2>
           <Posts posts={posts} />
           <Button href="/writing" type="secondary">
-            See all posts →
+            See writing archive →
           </Button>
         </div>
       </main>

@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import Head from "next/head";
 import { getDatabase, getPage, getBlocks } from "../lib/notion";
 import Link from "next/link";
@@ -10,6 +10,7 @@ import {
   PartialBlockObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
 import { useRouter } from "next/router";
+import AppContext from "../context/Appcontext";
 
 function calculateFirstTenCharacters(text) {
   return text.substring(0, 10);
@@ -174,7 +175,8 @@ const renderBlock = (block) => {
 };
 
 export default function Post({ page, blocks }) {
-  const router = useRouter();
+  const context = useContext(AppContext);
+
   if (!page || !blocks) {
     return <div />;
   }
@@ -194,7 +196,7 @@ export default function Post({ page, blocks }) {
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
           <div className="mt-4">
-            <Button onClick={() => router.push("/")}>← Go back</Button>
+            <Button href={context.prevPath}>← Go back</Button>
           </div>
         </section>
       </article>

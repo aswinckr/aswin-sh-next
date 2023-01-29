@@ -10,6 +10,7 @@ import { filterPostsByTags } from "../utils/arrays";
 import styles from "../styles/index.module.css";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
+const stringForFilteringTopics = "writing-topic: ";
 
 export default function Writing({ posts }) {
   const [filteredPosts, setFilteredPosts] = useState(posts);
@@ -26,7 +27,7 @@ export default function Writing({ posts }) {
         <ButtonTags
           posts={posts}
           setFilteredPosts={setFilteredPosts}
-          filterKeyword="writing-topic: "
+          filterKeyword={stringForFilteringTopics}
         />
         <Posts posts={filteredPosts} />
       </main>

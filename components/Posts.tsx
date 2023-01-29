@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Text } from "../pages/[id]";
 import styles from "../styles/index.module.css";
+import { trimKeywordFromString } from "../utils/string";
 import Link from "next/link";
 import {
   PageObjectResponse,
@@ -40,6 +41,15 @@ export default function Posts(posts: Posts): JSX.Element {
                 <Link href={`/${post.id}`}>
                   <Text text={post.properties.Name.title} />
                 </Link>
+                {post.properties.Tags.multi_select.map((tag) => {
+                  if (tag.name.includes("label: ")) {
+                    return (
+                      <span className={`${styles.label}`} key={tag.id}>
+                        {trimKeywordFromString(tag.name, "label: ")}
+                      </span>
+                    );
+                  }
+                })}
               </h3>
 
               <p className={styles.postDescription}>{date}</p>

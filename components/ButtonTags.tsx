@@ -4,7 +4,7 @@ import styles from "../styles/index.module.css";
 import {
   getArrayThatContainsString,
   trimStringFromAllValuesInArray,
-} from "../utils/arrays";
+} from "../utils/array";
 
 interface ButtonTagsProps {
   posts: any;
@@ -39,7 +39,6 @@ const checkIfAtleastOneValueInArrayHasString = (array, string) => {
 const filterPostsByTagString = (posts, tagString) => {
   const filteredPosts = posts.filter((post) => {
     const postTags = post.properties.Tags.multi_select.map((tag) => tag.name);
-    // console.log(checkIfAtleastOneValueInArrayHasString(postTags, tagString));
     return checkIfAtleastOneValueInArrayHasString(postTags, tagString);
   });
   return filteredPosts;

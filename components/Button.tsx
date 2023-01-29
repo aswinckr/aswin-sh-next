@@ -2,19 +2,19 @@ import React from "react";
 import Link from "next/link";
 
 interface ButtonProps {
-  href: string;
+  href?: string;
   type?: "primary" | "secondary";
   children?: React.ReactNode;
+  onClick?: () => void;
 }
 
 // text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
 
 const Button = (props: ButtonProps) => {
-  const { href, type = "secondary", children } = props;
+  const { href = "/", type = "secondary", children, onClick } = props;
 
-  console.log(children);
   return (
-    <Link href={href}>
+    <Link href={"/"}>
       <div
         className={`pt-2 inline-block cursor-pointer pb-2 pl-4 pr-4 text-white rounded-md font-semibold transition-colors ${
           type == "primary"

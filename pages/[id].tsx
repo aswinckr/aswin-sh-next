@@ -9,6 +9,7 @@ import {
   BlockObjectResponse,
   PartialBlockObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
+import { useRouter } from "next/router";
 
 function calculateFirstTenCharacters(text) {
   return text.substring(0, 10);
@@ -167,6 +168,9 @@ const renderBlock = (block) => {
 };
 
 export default function Post({ page, blocks }) {
+  const router = useRouter();
+  // console.log(`router pathname is ${router.pathname}`);
+  console.log(router);
   if (!page || !blocks) {
     return <div />;
   }
@@ -186,7 +190,7 @@ export default function Post({ page, blocks }) {
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
           <div className="mt-4">
-            <Button href="/">← Go home</Button>
+            <Button onClick={() => router.push("/")}>← Go back</Button>
           </div>
         </section>
       </article>

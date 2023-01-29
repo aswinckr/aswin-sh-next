@@ -60,3 +60,31 @@
   margin-bottom: 12px;
   opacity: 0.65;
 }
+
+.tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @apply flex flex-wrap mb-20 cursor-pointer;
+}
+
+.tags div {
+  @apply cursor-pointer inline-block;
+}
+
+.tags input {
+  display: none;
+  @apply cursor-pointer pb-2 pl-4 pr-4 font-semibold transition-colors;
+}
+
+.tags label {
+  @apply cursor-pointer pl-4 pr-4 pt-2 pb-2 ml-1 mr-1 rounded-full border-2 border-gray-800 hover:text-primary hover:border-primary transition-all ease-in;
+}
+
+.selected {
+  @apply cursor-pointer text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 border-primary;
+}
+
+.selected label {
+  @apply border-primary;
+}

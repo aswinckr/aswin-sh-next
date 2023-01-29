@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { getDatabaseWithFilter } from "../lib/notion";
 import { Text } from "./[id]";
-import IntroShort from "../components/IntroShort";
+import ButtonTags from "../components/ButtonTags";
 import Posts from "../components/Posts";
 import styles from "../styles/index.module.css";
 
@@ -18,6 +18,7 @@ export default function Writing({ posts }) {
 
       <main className={styles.container}>
         <h1 className="mb-24 pt-24">Writing Archive</h1>
+        <ButtonTags />
         <Posts posts={posts} />
       </main>
     </div>

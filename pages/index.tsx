@@ -26,7 +26,7 @@ export default function Home({ posts }) {
           <h2 className={styles.heading}>
             First time here? You might like these 👇🏽
           </h2>
-          <Posts postsWithLimit={{ posts }} />
+          <Posts posts={posts} />
         </div>
       </main>
     </div>
@@ -34,13 +34,6 @@ export default function Home({ posts }) {
 }
 
 export const getStaticProps = async () => {
-  // const filter = {
-  //   timestamp: "created_time",
-  //   created_time: {
-  //     past_week: {},
-  //   },
-  // };
-
   const filter = {
     property: "Tags",
     multi_select: {
@@ -49,8 +42,6 @@ export const getStaticProps = async () => {
   };
 
   const database = await getDatabaseWithFilter(databaseId, filter);
-
-  console.log(`-----------------${database}`);
 
   return {
     props: {

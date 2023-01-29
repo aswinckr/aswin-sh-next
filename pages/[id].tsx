@@ -14,7 +14,7 @@ function calculateFirstTenCharacters(text) {
   return text.substring(0, 10);
 }
 
-export const Text = ({ text }) => {
+export const Text = ({ text }: any) => {
   if (!text) {
     return null;
   }

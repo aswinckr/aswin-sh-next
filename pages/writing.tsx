@@ -18,7 +18,7 @@ export default function Writing({ posts }) {
 
       <main className={styles.container}>
         <h1 className="mb-24 pt-24">Writing Archive</h1>
-        <Posts postsWithLimit={{ posts }} />
+        <Posts posts={posts} limit={5} />
       </main>
     </div>
   );

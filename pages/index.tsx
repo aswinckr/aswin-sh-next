@@ -27,6 +27,7 @@ export default function Home({ posts }) {
             First time here? You might like these 👇🏽
           </h2>
           <Posts posts={posts} />
+          <Button href="/writing">See all posts</Button>
         </div>
       </main>
     </div>

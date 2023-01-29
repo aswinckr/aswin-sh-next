@@ -186,7 +186,7 @@ export default function Post({ page, blocks }) {
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>
           ))}
           <div className="mt-4">
-            <Button buttonText={`← Go home`} url="/" buttonType="secondary" />
+            <Button href="/">← Go home</Button>
           </div>
         </section>
       </article>

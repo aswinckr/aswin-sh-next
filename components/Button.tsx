@@ -1,23 +1,25 @@
 import React from "react";
 import Link from "next/link";
 interface ButtonProps {
-  buttonText: string;
-  url: string;
-  buttonType?: "primary" | "secondary";
+  href: string;
+  type?: "primary" | "secondary";
+  children?: React.ReactNode;
 }
 
 const Button = (props: ButtonProps) => {
-  const { buttonText, url, buttonType = "primary" } = props;
+  const { href, type = "secondary", children } = props;
+
+  console.log(children);
   return (
-    <Link href={url}>
+    <Link href={href}>
       <div
         className={`pt-2 inline-block cursor-pointer pb-2 pl-4 pr-4 text-white rounded-md font-semibold transition-colors ${
-          buttonType == "primary"
+          type == "primary"
             ? "bg-primary"
             : "border-2 border-primary hover:text-primary"
         }`}
       >
-        {buttonText}
+        {children}
       </div>
     </Link>
   );

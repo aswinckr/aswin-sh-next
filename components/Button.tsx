@@ -5,14 +5,13 @@ interface ButtonProps {
   href?: string;
   type?: "primary" | "secondary";
   children?: React.ReactNode;
-  onClick?: () => void;
 }
 
 const Button = (props: ButtonProps) => {
-  const { href = "/", type = "secondary", children, onClick } = props;
+  const { href = "/", type = "secondary", children } = props;
 
   return (
-    <Link href={href}>
+    <a href={href}>
       <div
         className={`pt-2 inline-block cursor-pointer pb-2 pl-4 pr-4 text-white rounded-md font-semibold transition-colors ${
           type == "primary"
@@ -22,7 +21,7 @@ const Button = (props: ButtonProps) => {
       >
         {children}
       </div>
-    </Link>
+    </a>
   );
 };
 

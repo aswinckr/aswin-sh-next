@@ -6,6 +6,8 @@ interface ButtonProps {
   children?: React.ReactNode;
 }
 
+// text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
+
 const Button = (props: ButtonProps) => {
   const { href, type = "secondary", children } = props;
 
@@ -15,7 +17,7 @@ const Button = (props: ButtonProps) => {
       <div
         className={`pt-2 inline-block cursor-pointer pb-2 pl-4 pr-4 text-white rounded-md font-semibold transition-colors ${
           type == "primary"
-            ? "bg-primary"
+            ? "bg-gradient-to-r from-purple-400 to-pink-600 text-opacity-100 hover:text-opacity-75"
             : "border-2 border-primary hover:text-primary"
         }`}
       >

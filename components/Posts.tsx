@@ -42,7 +42,9 @@ export default function Posts(posts: Posts): JSX.Element {
               </h3>
 
               <p className={styles.postDescription}>{date}</p>
-              <Link href={`/${post.id}`}>Read post →</Link>
+              <Link className="gradient" href={`/${post.id}`}>
+                Read post →
+              </Link>
             </li>
           );
         })}

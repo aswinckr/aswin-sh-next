@@ -8,13 +8,11 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-// text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600
-
 const Button = (props: ButtonProps) => {
   const { href = "/", type = "secondary", children, onClick } = props;
 
   return (
-    <Link href={"/"}>
+    <Link href={href}>
       <div
         className={`pt-2 inline-block cursor-pointer pb-2 pl-4 pr-4 text-white rounded-md font-semibold transition-colors ${
           type == "primary"

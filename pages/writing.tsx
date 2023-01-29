@@ -6,7 +6,7 @@ import { getDatabaseWithFilter } from "../lib/notion";
 import { Text } from "./[id]";
 import ButtonTags from "../components/ButtonTags";
 import Posts from "../components/Posts";
-import { filterPostsByTags } from "../utils/arrays";
+import { filterPostsByTags } from "../utils/array";
 import styles from "../styles/index.module.css";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;

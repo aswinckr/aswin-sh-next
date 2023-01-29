@@ -36,7 +36,13 @@ export const Text = ({ text }: any) => {
         key={calculateFirstTenCharacters(text.content)}
         style={color !== "default" ? { color } : {}}
       >
-        {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
+        {text.link ? (
+          <a className={styles.postTitleLink} href={text.link.url}>
+            {text.content}
+          </a>
+        ) : (
+          text.content
+        )}
       </span>
     );
   });
@@ -169,8 +175,6 @@ const renderBlock = (block) => {
 
 export default function Post({ page, blocks }) {
   const router = useRouter();
-  // console.log(`router pathname is ${router.pathname}`);
-  console.log(router);
   if (!page || !blocks) {
     return <div />;
   }

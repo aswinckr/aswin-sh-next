@@ -59,6 +59,9 @@
   @apply hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:transition-colors hover:ease-in;
 }
 
+.postTitleLink {
+}
+
 .postDescription {
   margin-top: 0;
   margin-bottom: 12px;
@@ -83,6 +86,10 @@
 
 .tags label {
   @apply cursor-pointer pl-4 pr-4 pt-2 pb-2 ml-1 mr-1 rounded-full border-2 border-gray-800 hover:text-primary hover:border-primary transition-all ease-in;
+}
+
+.label {
+  @apply text-xs font-normal italic bg-gray-800 pl-2 pr-2.5 pt-1 pb-1 relative -top-1 rounded-full ml-2 hover:text-white;
 }
 
 .selected {

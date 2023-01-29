@@ -8,16 +8,16 @@ import styles from "../styles/index.module.css";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
-export default function Writing({ posts }) {
+export default function Projects({ posts }) {
   return (
     <div>
       <Head>
-        <title>All Writing</title>
+        <title>Projects</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.container}>
-        <h1 className="mb-24 pt-24">Writing Archive</h1>
+        <h1 className="mb-24 pt-24">Projects</h1>
         <Posts posts={posts} />
       </main>
     </div>
@@ -28,7 +28,7 @@ export const getStaticProps = async () => {
   const filter = {
     property: "Tags",
     multi_select: {
-      contains: "writing",
+      contains: "project",
     },
   };
 

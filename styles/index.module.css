@@ -42,7 +42,7 @@
 }
 
 .post {
-  @apply mb-8;
+  @apply mb-12;
 }
 
 .postTitle {
@@ -52,7 +52,7 @@
 
 .postTitle a {
   @apply text-white;
-  @apply hover:text-primary transition-colors ease-in;
+  @apply hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-purple-400 hover:to-pink-600 hover:transition-colors hover:ease-in;
 }
 
 .postDescription {

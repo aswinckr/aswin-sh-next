@@ -65,6 +65,15 @@ const Nav = () => {
                 Writing
               </span>
             </Link>
+            <Link href="/projects">
+              <span
+                className={`${
+                  isOpen ? `block` : `hidden`
+                } block mt-4 lg:inline-block lg:mt-0 mr-4`}
+              >
+                Projects
+              </span>
+            </Link>
           </div>
           <div>
             <a

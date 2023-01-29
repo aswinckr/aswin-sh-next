@@ -8,23 +8,15 @@ const IntroShort = () => {
     <div className="">
       <Avatar />
       <div>
-        <p className="pt-4 text-xl leading-loose text-white opacity-100">
-          I'm a Product Designer & Writer with a keen interest in human
-          behaviour. This website is my little online home for my writing and
-          experiments with code. I mostly write about{" "}
-          <a href="#" target="_blank" className="_textlink">
-            Design
-          </a>
-          ,{" "}
-          <a href="#" target="_blank" className="_textlink">
-            Psychology
-          </a>{" "}
-          or{" "}
-          <a href="#" target="_blank" className="_textlink">
-            Storytelling
-          </a>
-          . Currently I'm a Design Manager focused on User Retention at Delivery
-          Hero in Berlin, Germany.
+        <p className="pt-4 text-lg italic opacity-90 leading-loose text-white">
+          Aswin is a design manager and an aspiring writer who is on a journey
+          to find his personal niche he likes to write about. This website is
+          his little home for his experiments, <a href="/writing">ideas</a> and{" "}
+          <a href="/projects">projects</a>. Currently Aswin lives in Berlin,
+          Germany and works for Delivery Hero in Berlin, Germany. Have a look
+          around, leave some comments, and{" "}
+          <a href="#">🚧 join my mailing list</a> to get notified when I post
+          something new.
         </p>
       </div>
     </div>

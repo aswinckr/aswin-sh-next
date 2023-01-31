@@ -9,17 +9,18 @@ const IntroShort = () => {
       <Avatar />
       <div>
         <p className="pt-4 text-lg italic opacity-90 leading-loose text-white">
-          Aswin is a product designer living in Berlin. He’s on a journey to
-          finding his{" "}
+          Hey there, I'm Aswin!✨, a design manager and an aspiring writer
+          living in Berlin. I'm on a journey to finding my{" "}
           <a href={`https://perell.com/note/build-a-personal-monopoly/`}>
-            personal monopoly.
+            personal monopoly
           </a>{" "}
-          You can do it too - I recommend checking out{" "}
+          through writing. You can do it too - recommend checking out{" "}
           <a href="https://writeofpassage.school/"> write of passage</a> or{" "}
           <a href="https://www.ship30for30.com/">ship30</a>. This website is my
-          little online home for where my ideas live. You might find some of
-          them interesting! If you do, leave a comment, or reach out. I’m always
-          happy to <a href="/contact">make a new friend!</a>
+          little online home for my ideas. Take a look around, you may find some
+          of them interesting. If you do, leave a comment, or reach out
+          directly, I'm always happy to chat or{" "}
+          <a href="/contact">make a new friend!</a>
         </p>
       </div>
     </div>

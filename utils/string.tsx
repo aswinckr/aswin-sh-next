@@ -5,3 +5,9 @@ export const trimKeywordFromString = (string, keyword) => {
   }
   return string.substring(index + keyword.length);
 };
+
+export const replaceAllDashesWithSpacesAndMakeFirstLetterUppercase = (
+  string
+) => {
+  return string.replace(/-/g, " ").replace(/^\w/, (c) => c.toUpperCase());
+};

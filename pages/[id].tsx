@@ -95,7 +95,7 @@ const renderBlock = (block) => {
     case "numbered_list_item":
       return (
         <li>
-          <Text text={value.rich_text} key={id} />
+          <Text text={value.rich_text} />
           {!!value.children && renderNestedList(block)}
         </li>
       );
@@ -103,7 +103,7 @@ const renderBlock = (block) => {
       return (
         <div>
           <label htmlFor={id}>
-            <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
+            <input type="checkbox" defaultChecked={value.checked} />{" "}
             <Text text={value.rich_text} />
           </label>
         </div>

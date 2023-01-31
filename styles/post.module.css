@@ -10,7 +10,7 @@
 }
 
 .container h2 {
-  @apply pt-12 pb-2 text-2xl;
+  @apply pt-12 pb-4 text-2xl;
 }
 .container blockquote {
   @apply italic opacity-60 pl-4 border-l-4 mt-2 mb-2;
@@ -18,6 +18,20 @@
 
 .container p {
   @apply pt-4 pb-4 leading-8 opacity-80;
+}
+
+.container ul {
+  @apply text-lg;
+}
+.container li {
+  @apply leading-8 opacity-80 text-lg;
+}
+
+.container ol {
+  @apply pl-6 pb-6 opacity-100;
+}
+.container ol li {
+  @apply pt-4;
 }
 
 .container img {

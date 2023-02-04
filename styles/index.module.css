@@ -29,6 +29,10 @@
   @apply text-lg font-medium tracking-wide mb-0 pb-8;
 }
 
+.shortintro {
+  @apply opacity-90 leading-relaxed text-white;
+}
+
 .pageTitle {
   @apply mb-16 pt-24;
 }

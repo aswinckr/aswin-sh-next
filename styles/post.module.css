@@ -120,6 +120,18 @@
   margin-bottom: 10px;
 }
 
+.context {
+  @apply block mb-6 rounded-md border border-gray-800;
+}
+
+.contextHeader {
+  @apply bg-gray-900 pl-4 pr-4 pt-2 pb-2;
+}
+
+.contextBody {
+  @apply pl-4 pr-4 text-base leading-loose text-gray-400 italic pt-4 pb-4 block;
+}
+
 @media (prefers-color-scheme: dark) {
   .code {
     background-color: rgb(15, 8, 28);

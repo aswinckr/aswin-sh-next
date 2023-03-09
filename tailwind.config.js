@@ -20,6 +20,7 @@ module.exports = {
       fontFamily: {
         // "fugaz-one": ['"Fugaz One"', ...defaultTheme.fontFamily.serif],
         inter: ['"Inter"', ...defaultTheme.fontFamily.sans],
+        laBelleAurore: ['"La Belle Aurore"', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: {

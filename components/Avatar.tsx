@@ -4,7 +4,7 @@ import profilePic from "../public/profile-pic.jpg";
 const Avatar = () => {
   return (
     <div
-      className="w-64 mb-2 lg:mb-8 mt-16 lg:mt-24 shadow-xl mx-auto"
+      className="w-64 mt-16 lg:mt-24 shadow-xl mx-auto"
       style={{ height: "24rem" }}
     >
       <Image

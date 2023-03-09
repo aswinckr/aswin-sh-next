@@ -11,3 +11,7 @@ export const replaceAllDashesWithSpacesAndMakeFirstLetterUppercase = (
 ) => {
   return string.replace(/-/g, " ").replace(/^\w/, (c) => c.toUpperCase());
 };
+
+export const getRandomValueFromArray = (array) => {
+  return array[Math.floor(Math.random() * array.length)];
+};

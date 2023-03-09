@@ -10,13 +10,12 @@ const IntroShort = () => {
       <Avatar />
       <div>
         <p
-          className={`${styles.shortintro} pl-4 italic text-2xl font-bold border-l-4 pt-0 border-gray-600`}
+          className={`${styles.shortintro} font-laBelleAurore pl-4 italic text-5xl text-center font-bold mb-16 leading-tight`}
         >
-          Hello there, I'm Aswin! I manage a team of product designers and I
-          write about a variety of topics like product design, people
-          management, self introspection, productivity and more.
+          Hey there, i’m Aswin. <br />i write about design and self-awareness.
         </p>
-        <p className={`${styles.shortintro} mt-4 pt-4 pb-4`}>
+        <h2 className={styles.heading}>About me in 5sec or less</h2>
+        <p className={`${styles.shortintro} pb-4`}>
           <span className="mr-4"> ⭐️</span>I live now in Berlin, Germany.
         </p>
         <p className={styles.shortintro}>

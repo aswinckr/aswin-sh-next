@@ -30,7 +30,7 @@
 }
 
 .shortintro {
-  @apply opacity-90 leading-relaxed text-white;
+  @apply opacity-90 leading-relaxed text-gray-200;
 }
 
 .pageTitle {

@@ -26,7 +26,7 @@
 
 .heading {
   opacity: 0.6;
-  @apply text-lg font-medium tracking-wide mb-0 pb-8 mb-4;
+  @apply text-lg font-medium tracking-wide pb-8 mb-4;
 }
 
 .shortintro {
@@ -102,4 +102,20 @@
 
 .selected label {
   @apply border-primary;
+}
+
+.newsletter {
+  background-color: rgb(15, 15, 15);
+  @apply pt-12 pb-12 rounded-md;
+}
+
+.newsletterWrapper {
+  @apply max-w-sm md:max-w-md text-center  ml-auto mr-auto;
+}
+
+.newsletter h2 {
+  @apply font-inter text-3xl pb-4 leading-tight font-normal;
+}
+.newsletter p {
+  @apply pb-8 text-gray-600;
 }

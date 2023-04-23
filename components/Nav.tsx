@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
+import logo from "../public/logo.png";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -12,8 +14,11 @@ const Nav = () => {
 
   return (
     <div className="container mx-auto mb-8">
-      <nav className="flex items-center justify-between flex-wrap pt-6 pb-6 border-b border-gray-200 dark:border-gray-800">
+      <nav className="flex items-center justify-between flex-wrap pt-4 pb-2 border-b border-gray-200 dark:border-gray-800">
         <div className="flex items-center flex-shrink-0 mr-6">
+          <Link href="/">
+            <Image src={logo} alt="logo" className="w-36 opacity-80" />
+          </Link>
           {/* <svg
             className="fill-current h-8 w-8 mr-2"
             width="54"
@@ -23,12 +28,6 @@ const Nav = () => {
           >
             <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
           </svg> */}
-          <span className="font-semibold font-barlow text-xl tracking-tight pb-4 mt-4 cursor-pointer lg:hidden">
-            <Link href="/">
-              {/* <Image src={logo} alt="Logo" className="" /> */}
-              Start Here
-            </Link>
-          </span>
         </div>
         <div className="block lg:hidden">
           <button
@@ -45,8 +44,8 @@ const Nav = () => {
             </svg>
           </button>
         </div>
-        <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div className="text-md lg:flex-grow">
+        <div className="w-full block lg:flex lg:items-center lg:w-auto">
+          <div className="text-md">
             <Link href="/">
               <span
                 className={`${isOpen ? `block` : `hidden`} ${
@@ -75,7 +74,7 @@ const Nav = () => {
               </span>
             </Link>
           </div>
-          <div>
+          {/* <div>
             <a
               href="#"
               className={`${
@@ -84,7 +83,7 @@ const Nav = () => {
             >
               🚧 Join my mailing list
             </a>
-          </div>
+          </div> */}
         </div>
       </nav>
     </div>

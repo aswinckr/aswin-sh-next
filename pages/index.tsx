@@ -31,6 +31,24 @@ export default function Home({ posts }) {
             See writing archive →
           </Button>
         </div>
+        <div>
+          <iframe
+            src={
+              "https://embeds.beehiiv.com/6cb40e0e-448f-40f0-938f-186b8f78b542"
+            }
+            data-test-id={"beehiiv-embed"}
+            width={"480"}
+            height={"320"}
+            frameBorder={"0"}
+            scrolling={"no"}
+            style={{
+              borderRadius: "4px",
+              width: "100%",
+              margin: "0",
+              backgroundColor: "transparent",
+            }}
+          ></iframe>
+        </div>
       </main>
     </div>
   );

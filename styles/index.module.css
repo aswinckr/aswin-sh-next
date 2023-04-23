@@ -26,11 +26,11 @@
 
 .heading {
   opacity: 0.6;
-  @apply text-lg font-medium tracking-wide mb-0 pb-8;
+  @apply text-lg font-medium tracking-wide mb-0 pb-8 mb-4;
 }
 
 .shortintro {
-  @apply opacity-90 leading-relaxed text-gray-200;
+  @apply leading-relaxed text-gray-200;
 }
 
 .pageTitle {

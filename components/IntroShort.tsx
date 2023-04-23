@@ -6,27 +6,25 @@ import styles from "../styles/index.module.css";
 
 const IntroShort = () => {
   return (
-    <div className="mb-24">
-      <Avatar />
-      <div>
+    <div className="mb-24 flex flex-col md:flex-row">
+      <Avatar className="" />
+      <div className="pl-8 flex-1 mt-16">
         <p
-          className={`${styles.shortintro} font-laBelleAurore pl-4 italic text-5xl text-center font-bold mb-16 leading-tight`}
+          className={`${styles.shortintro} font-inter text-4xl mb-2 leading-tight`}
         >
-          Hey there, i’m Aswin. <br />i write about design and self-awareness.
+          Hey there, i’m Aswin
         </p>
-        <h2 className={styles.heading}>About me in 5sec or less</h2>
+        <h2 className={styles.heading}>Here's my quick intro:</h2>
         <p className={`${styles.shortintro} pb-4`}>
-          <span className="mr-4"> ⭐️</span>I live now in Berlin, Germany.
+          <span className="mr-2">✨</span>Creating experiences through words and
+          code
         </p>
-        <p className={styles.shortintro}>
-          <span className="mr-4"> ⭐️</span>I work full time at{" "}
-          <a href="https://www.notion.so">Delivery Hero</a>. I used to work at{" "}
-          <a href="https://www.notion.so">Grab</a> in Singapore before.
+        <p className={`${styles.shortintro} pb-4`}>
+          <span className="mr-2">🎭</span>Amateur improv student
         </p>
-        <p className={`${styles.shortintro} pt-4`}>
-          <span className="mr-4"> ⭐️</span>
-          I'm currently curious about social extroverts and becoming a great
-          communicator. I practice this through improv storytelling.
+        <p className={`${styles.shortintro} pb-4`}>
+          <span className="mr-2">🌍</span>Currently live and work in Berlin,
+          Germany
         </p>
       </div>
     </div>

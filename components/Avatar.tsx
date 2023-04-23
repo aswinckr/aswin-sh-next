@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import profilePic from "../public/profile-pic.jpg";
-const Avatar = () => {
+const Avatar = ({ className }) => {
   return (
     <div
-      className="w-64 mt-16 lg:mt-24 shadow-xl mx-auto"
+      className={`w-64 mt-12 shadow-xl mx-auto ${className}`}
       style={{ height: "24rem" }}
     >
       <Image

@@ -8,7 +8,7 @@ const IntroShort = () => {
   return (
     <div className="mb-24 flex flex-col md:flex-row">
       <Avatar className="" />
-      <div className="pl-8 flex-1 mt-16">
+      <div className="md:pl-8 flex-1 mt-16">
         <p
           className={`${styles.shortintro} font-inter text-4xl mb-2 leading-tight`}
         >

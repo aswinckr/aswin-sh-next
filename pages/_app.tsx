@@ -7,6 +7,7 @@ import "../styles/globals.css";
 import "../styles/nprogress.css";
 import { useRouter } from "next/router";
 import { useRef } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import AppContext from "../context/Appcontext";
 
 Router.events.on("routeChangeStart", nProgress.start);
@@ -34,6 +35,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Nav />
       <Component {...pageProps} />
+      <Analytics />
       <Footer />
     </AppContext.Provider>
   );

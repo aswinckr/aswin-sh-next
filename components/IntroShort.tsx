@@ -37,7 +37,7 @@ const IntroShort = () => {
           </a>{" "}
         </p>
         <p className={`${styles.shortintro} pb-4`}>
-          <span className="mr-2">💅🏼</span>Manage a team of product designers for
+          <span className="mr-2">💅🏼</span>Manage a team of product designers for{" "}
           <a href="https://linkedin.com/in/aswinckr" target="_blank">
             a food delivery app
           </a>

@@ -24,7 +24,7 @@ export default function Home({ posts }) {
 
         <div className="mb-16 mt-16">
           <h2 className={styles.heading}>
-            First time here? You might like these 👇🏽
+            Take a look at my latest writing 👇🏽
           </h2>
           <Posts posts={posts} />
           <Button href="/writing" type="secondary">

@@ -110,7 +110,7 @@
 }
 
 .newsletterWrapper {
-  @apply max-w-sm md:max-w-md text-center  ml-auto mr-auto;
+  @apply max-w-sm md:max-w-lg text-center  ml-auto mr-auto;
 }
 
 .newsletter h2 {

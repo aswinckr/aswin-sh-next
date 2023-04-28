@@ -16,17 +16,31 @@ const IntroShort = () => {
         </p>
         <h2 className={styles.heading}>Here's what i'm up to -</h2>
         <p className={`${styles.shortintro} pb-4`}>
-          <span className="mr-2">🎭</span>Developing social & soft skills
-          through writing and improv, and sharing my ideas to make the world a
-          little more fun.
+          <span className="mr-2">🎭</span>Buiding social & soft skills through
+          writing and{" "}
+          <a
+            href="https://www.youtube.com/watch?v=M-NtvvnKmrw&ab_channel=WhoseLineIsItAnyway%3F"
+            target="_blank"
+          >
+            improv
+          </a>
+          , and sharing them here to make the world a bit more fun.
         </p>
         <p className={`${styles.shortintro} pb-4`}>
-          <span className="mr-2">🌍</span>Moved to Berlin and learning to speak
-          German one day at a time using an audiobook
+          <span className="mr-2">🌍</span>Moved to Berlin and learning German,
+          one day at a time, using{" "}
+          <a
+            href="https://www.pimsleur.com/the-pimsleur-method"
+            target="_blank"
+          >
+            an audiobook
+          </a>{" "}
         </p>
         <p className={`${styles.shortintro} pb-4`}>
           <span className="mr-2">💅🏼</span>Manage a team of product designers for
-          a popular food delivery platform
+          <a href="https://linkedin.com/in/aswinckr" target="_blank">
+            a popular food delivery platform
+          </a>
         </p>
       </div>
     </div>

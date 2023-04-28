@@ -23,9 +23,7 @@ export default function Home({ posts }) {
         </header>
 
         <div className="mb-16 mt-16">
-          <h2 className={styles.heading}>
-            Take a look at my latest writing 👇🏽
-          </h2>
+          <h2 className={styles.heading}>Read at my latest writing 👇🏽</h2>
           <Posts posts={posts} />
           <Button href="/writing" type="secondary">
             See writing archive →

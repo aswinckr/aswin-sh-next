@@ -24,7 +24,7 @@ const IntroShort = () => {
           >
             improv
           </a>
-          , and sharing them here to make the world a bit more fun.
+          , and writing about them to make the world a bit more fun.
         </p>
         <p className={`${styles.shortintro} pb-4`}>
           <span className="mr-2">🌍</span>Moved to Berlin and learning German,

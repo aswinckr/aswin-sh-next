@@ -31,8 +31,11 @@ export default function Home({ posts }) {
         </div>
         <div className={styles.newsletter}>
           <div className={styles.newsletterWrapper}>
-            <h2>🍻 Weekly brew</h2>
-            <p>Fresh insights and updtes delivered directly into your inbox</p>
+            <h2>🍻 Sign up for Weekly brew</h2>
+            <p>
+              Every week I send a newsletter with my latest writing and things
+              I've been thinking about.
+            </p>
             <iframe
               src="https://embeds.beehiiv.com/6cb40e0e-448f-40f0-938f-186b8f78b542?slim=true"
               data-test-id="beehiiv-embed"

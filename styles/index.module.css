@@ -117,5 +117,5 @@
   @apply font-inter text-3xl pb-4 leading-tight font-semibold;
 }
 .newsletter p {
-  @apply pb-8 text-gray-600;
+  @apply pb-8 text-gray-500;
 }

@@ -21,10 +21,17 @@ export default function Home({ posts }) {
         <header className={styles.header}>
           <IntroShort />
         </header>
-
         <div className="mb-16 mt-16">
-          <h2 className={styles.heading}>Read at my latest writing 👇🏽</h2>
-          <Posts posts={posts} />
+          <h2 className={styles.heading}>Ongoing Projects</h2>
+          <Posts posts={posts} postType={"project"} />
+          <Button href="/writing" type="secondary">
+            See writing archive →
+          </Button>
+        </div>
+
+        <div className="mb-16 mt-32">
+          <h2 className={styles.heading}>Latest Writing</h2>
+          <Posts posts={posts} postType={"writing"} />
           <Button href="/writing" type="secondary">
             See writing archive →
           </Button>

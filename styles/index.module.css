@@ -30,7 +30,7 @@
 }
 
 .shortintro {
-  @apply leading-relaxed text-gray-200;
+  @apply leading-relaxed;
 }
 
 .pageTitle {
@@ -43,14 +43,18 @@
   }
 }
 
+.projectContainer {
+  @apply p-8 border border-gray-800 rounded-md mb-8;
+}
+
 .posts {
-  list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .post {
   @apply mb-12;
+  list-style: none;
 }
 
 .postTitle {

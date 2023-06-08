@@ -191,38 +191,7 @@ export default function Post({ page, blocks }) {
         <h1 className={styles.name}>
           <Text text={page.properties.Name.title} />
         </h1>
-        {page.properties.Tags.multi_select.map((tag) => {
-          if (tag.name.includes("label: ")) {
-            return (
-              <div className={styles.context}>
-                <div className={styles.contextHeader}>
-                  🧠
-                  <span className="italic">
-                    {" "}
-                    Here's some context you might want to know
-                  </span>
-                </div>
-                <div className={styles.contextBody}>
-                  <span>
-                    This piece was written as a part of{" "}
-                    <a href="https://www.ship30for30.com/" target={`_blank`}>
-                      {" "}
-                      Ship30
-                    </a>
-                    , an initiative where a community of people write one
-                    article a day for 30 days. The goal of the program was to
-                    get newbies like myself get started with writing and each
-                    article took about 60-90 mins to write. Because of this, it
-                    may contain grammatical errors, unrefined thoughts or might
-                    just be garbage. My goal in 2023 is to publish more refined
-                    articles after fact checks and necessary polishing. Please
-                    check back for further updates.{" "}
-                  </span>
-                </div>
-              </div>
-            );
-          }
-        })}
+
         <section>
           {blocks.map((block) => (
             <Fragment key={block.id}>{renderBlock(block)}</Fragment>

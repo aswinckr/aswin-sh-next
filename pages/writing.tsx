@@ -1,13 +1,9 @@
 import Head from "next/head";
-import { useEffect } from "react";
 import { useState } from "react";
-import Link from "next/link";
-import { getDatabaseWithFilter } from "../lib/notion";
-import { Text } from "./[id]";
 import ButtonTags from "../components/ButtonTags";
-import Posts from "../components/Posts";
-import { filterPostsByTags } from "../utils/array";
+import BlogPosts from "../components/Writing";
 import styles from "../styles/index.module.css";
+import { fetchInitialData } from "../lib/fetchdata";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 const stringForFilteringTopics = "writing-topic: ";
@@ -29,21 +25,14 @@ export default function Writing({ posts }) {
           setFilteredPosts={setFilteredPosts}
           filterKeyword={stringForFilteringTopics}
         />
-        <Posts posts={filteredPosts} />
+        <BlogPosts posts={filteredPosts} />
       </main>
     </div>
   );
 }
 
 export const getStaticProps = async () => {
-  const filter = {
-    property: "Tags",
-    multi_select: {
-      contains: "writing",
-    },
-  };
-
-  const database = await getDatabaseWithFilter(databaseId, filter);
+  const database = await fetchInitialData();
 
   return {
     props: {

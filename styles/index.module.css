@@ -44,7 +44,15 @@
 }
 
 .projectContainer {
-  @apply p-8 border border-gray-800 rounded-md mb-8;
+  @apply p-8 border text-white border-gray-800 rounded-md mb-8 hover:text-primary transition-colors ease-in-out;
+}
+
+.projectTitle {
+  @apply text-xl;
+}
+
+.projectCount {
+  @apply text-lg -rotate-3 relative -top-6 -left-2 text-gray-500;
 }
 
 .posts {
@@ -74,6 +82,10 @@
   margin-top: 0;
   margin-bottom: 12px;
   opacity: 0.65;
+}
+
+.postSummary {
+  @apply text-base leading-relaxed mb-4;
 }
 
 .tags {

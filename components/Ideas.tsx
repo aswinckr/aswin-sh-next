@@ -1,17 +1,11 @@
-import { useState } from "react";
 import { Text } from "../pages/[id]";
 import styles from "../styles/index.module.css";
 import { trimKeywordFromString } from "../utils/string";
 import Link from "next/link";
-import {
-  PageObjectResponse,
-  PartialPageObjectResponse,
-} from "@notionhq/client/build/src/api-endpoints";
 
 interface Posts {
   posts: any;
   limit?: number;
-  postType?: string;
 }
 
 const displayOnlyFirstNPosts = (posts, limit) => {
@@ -21,8 +15,16 @@ const displayOnlyFirstNPosts = (posts, limit) => {
   return posts;
 };
 
-export default function Posts(posts: Posts): JSX.Element {
-  const postType = posts.postType;
+const postSummaryIfValueExists = (post) => {
+  if (post.properties.Summary && post.properties.Summary.rich_text[0]) {
+    return post.properties.Summary.rich_text[0].plain_text;
+  }
+  return "";
+};
+
+export default function Ideas(posts: Posts): JSX.Element {
+  const postType = "idea";
+
   const postsFilteredByPostType = posts.posts.filter((post) => {
     if (postType) {
       return post.properties.Tags.multi_select.some((tag) =>
@@ -31,6 +33,7 @@ export default function Posts(posts: Posts): JSX.Element {
     }
     return true;
   });
+
   const postsAfterLimitsIfAny = displayOnlyFirstNPosts(
     postsFilteredByPostType,
     posts.limit
@@ -45,11 +48,10 @@ export default function Posts(posts: Posts): JSX.Element {
             day: "2-digit",
             year: "numeric",
           });
+
           return (
             <li key={post.id} className={styles.post}>
-              <div
-                className={postType == "project" ? styles.projectContainer : ""}
-              >
+              <div>
                 <h3 className={styles.postTitle}>
                   <Link href={`/${post.id}`}>
                     <Text text={post.properties.Name.title} />
@@ -65,10 +67,9 @@ export default function Posts(posts: Posts): JSX.Element {
                   })}
                 </h3>
 
-                <p className={styles.postDescription}>{date}</p>
-                <Link className="gradient" href={`/${post.id}`}>
-                  Read post →
-                </Link>
+                <p className={styles.postSummary}>
+                  {postSummaryIfValueExists(post)}
+                </p>
               </div>
             </li>
           );

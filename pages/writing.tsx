@@ -1,14 +1,14 @@
 import Head from "next/head";
 import { useState } from "react";
 import ButtonTags from "../components/ButtonTags";
-import BlogPosts from "../components/Writing";
+import Writing from "../components/Writing";
 import styles from "../styles/index.module.css";
 import { fetchInitialData } from "../lib/fetchdata";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 const stringForFilteringTopics = "writing-topic: ";
 
-export default function Writing({ posts }) {
+export default function ({ posts }) {
   const [filteredPosts, setFilteredPosts] = useState(posts);
 
   return (
@@ -25,7 +25,7 @@ export default function Writing({ posts }) {
           setFilteredPosts={setFilteredPosts}
           filterKeyword={stringForFilteringTopics}
         />
-        <BlogPosts posts={filteredPosts} />
+        <Writing posts={filteredPosts} />
       </main>
     </div>
   );

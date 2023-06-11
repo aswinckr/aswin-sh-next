@@ -1,17 +1,13 @@
 import Head from "next/head";
-import Link from "next/link";
-// import { getDatabase, getDatabaseWithFilter } from "../lib/notion";
 import { fetchInitialData } from "../lib/fetchdata";
-import { Text } from "./[id]";
 import IntroShort from "../components/IntroShort";
 import Button from "../components/Button";
 import Ideas from "../components/Ideas";
 import Writing from "../components/Writing";
 import Projects from "../components/Projects";
 import styles from "../styles/index.module.css";
-import { useContext } from "react";
-import AppContext from "../context/Appcontext";
 import { getNumberOfPostsWhereTagsContainsValue } from "../utils/array";
+import Newsletter from "../components/Newsletter";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -45,28 +41,8 @@ export default function Home({ posts }) {
             See writing archive →
           </Button>
         </div>
-        <div className={styles.newsletter}>
-          <div className={styles.newsletterWrapper}>
-            <h2>🍻 Join my Weekly Idea Blast</h2>
-            <p>
-              Every week I send a newsletter with my latest writing and things
-              I've been thinking about. Sign up below to be added to the list.
-            </p>
-            <iframe
-              src="https://embeds.beehiiv.com/6cb40e0e-448f-40f0-938f-186b8f78b542?slim=true"
-              data-test-id="beehiiv-embed"
-              height="52"
-              frameBorder="0"
-              scrolling="no"
-              style={{
-                margin: "0",
-                borderRadius: "4px",
-                width: "100%",
-                backgroundColor: "transparent",
-              }}
-            ></iframe>
-          </div>
-        </div>
+
+        <Newsletter />
       </main>
     </div>
   );

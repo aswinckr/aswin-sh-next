@@ -2,18 +2,12 @@ import { Text } from "../pages/[id]";
 import styles from "../styles/index.module.css";
 import { trimKeywordFromString } from "../utils/string";
 import Link from "next/link";
+import { listOnlyFirstNPosts, postsFilteredByPostType } from "../utils/array";
 
 interface Posts {
   posts: any;
   limit?: number;
 }
-
-const displayOnlyFirstNPosts = (posts, limit) => {
-  if (limit) {
-    return posts.slice(0, limit);
-  }
-  return posts;
-};
 
 const postSummaryIfValueExists = (post) => {
   if (post.properties.Summary && post.properties.Summary.rich_text[0]) {
@@ -25,17 +19,8 @@ const postSummaryIfValueExists = (post) => {
 export default function Ideas(posts: Posts): JSX.Element {
   const postType = "idea";
 
-  const postsFilteredByPostType = posts.posts.filter((post) => {
-    if (postType) {
-      return post.properties.Tags.multi_select.some((tag) =>
-        tag.name.includes(postType)
-      );
-    }
-    return true;
-  });
-
-  const postsAfterLimitsIfAny = displayOnlyFirstNPosts(
-    postsFilteredByPostType,
+  const postsAfterLimitsIfAny = listOnlyFirstNPosts(
+    postsFilteredByPostType(posts, postType),
     posts.limit
   );
 

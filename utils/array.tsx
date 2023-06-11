@@ -66,3 +66,20 @@ export const listOfAllProjects = (posts) => {
 
   return listOfAllProjectsWithTheirIds;
 };
+
+export const postsFilteredByPostType = (posts, postType) =>
+  posts.posts.filter((post) => {
+    if (postType) {
+      return post.properties.Tags.multi_select.some((tag) =>
+        tag.name.includes(postType)
+      );
+    }
+    return true;
+  });
+
+export const listOnlyFirstNPosts = (posts, limit) => {
+  if (limit) {
+    return posts.slice(0, limit);
+  }
+  return posts;
+};

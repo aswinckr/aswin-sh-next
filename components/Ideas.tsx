@@ -2,11 +2,16 @@ import { Text } from "../pages/[id]";
 import styles from "../styles/index.module.css";
 import { trimKeywordFromString } from "../utils/string";
 import Link from "next/link";
-import { listOnlyFirstNPosts, postsFilteredByPostType } from "../utils/array";
+import {
+  listOnlyFirstNPosts,
+  postsFilteredByPostType,
+  postsFilteredByProjectId,
+} from "../utils/array";
 
 interface Posts {
   posts: any;
   limit?: number;
+  filter?: string;
 }
 
 const postSummaryIfValueExists = (post) => {
@@ -20,7 +25,10 @@ export default function Ideas(posts: Posts): JSX.Element {
   const postType = "idea";
 
   const postsAfterLimitsIfAny = listOnlyFirstNPosts(
-    postsFilteredByPostType(posts, postType),
+    postsFilteredByProjectId(
+      postsFilteredByPostType(posts, postType),
+      posts.filter
+    ),
     posts.limit
   );
 

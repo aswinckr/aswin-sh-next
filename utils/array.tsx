@@ -83,3 +83,14 @@ export const listOnlyFirstNPosts = (posts, limit) => {
   }
   return posts;
 };
+
+export const postsFilteredByProjectId = (posts, projectId = "") => {
+  if (projectId !== "") {
+    return posts.filter((post) => {
+      return post.properties.Projects.multi_select.some(
+        (project) => project.id === projectId
+      );
+    });
+  }
+  return posts;
+};

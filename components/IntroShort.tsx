@@ -14,7 +14,8 @@ const IntroShort = (props: IntroShortProps) => {
         <p
           className={`${styles.shortintro} font-inter font-semibold text-4xl mb-2 leading-tight text-gray-200`}
         >
-          {ideaCount} Ideas that shape my life
+          <span className={styles.ideaCount}>{ideaCount}</span>
+          Ideas that shape my life
         </p>
         {/* <h2 className={styles.heading}>Here's what i'm up to -</h2> */}
         <p className={`${styles.shortintro} pb-4 text-gray-400`}>

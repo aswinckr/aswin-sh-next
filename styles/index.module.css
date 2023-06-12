@@ -33,6 +33,10 @@
   @apply leading-relaxed;
 }
 
+.ideaCount {
+  @apply text-8xl font-laBelleAurore text-primary relative top-3;
+}
+
 .pageTitle {
   @apply mb-16 pt-24;
 }
@@ -52,7 +56,7 @@
 }
 
 .projectCount {
-  @apply text-lg -rotate-3 relative -top-6 -left-2 text-gray-500;
+  @apply text-lg -rotate-3 relative -top-3 md:-top-5 -left-2 text-gray-500;
 }
 
 .posts {
